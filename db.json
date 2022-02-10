@@ -50,55 +50,58 @@
     }
   ],
   "restaurants": [
-        { 
-            "id": 1,
-            "name": "KFC",
-            "location": "koramangala",
-            "cuisines": "fast food",
-            "timings": "10:00 am to 11:00 pm",
-            "cost": "Rs. 1000",
-            "rating": "4.5",
-            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
-        },
-        {
-            "id": 2,
-            "name": "McDonalds",
-            "location": "koramangala",
-            "cuisines": "fast food",
-            "timings": "10:00 am to 11:00 pm",
-            "cost": "Rs. 1000",
-            "rating": "4.5",
-            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
-        },
-        {
-            "id": 3,
-            "name": "Burger King",
-            "location": "koramangala",
-            "cuisines": "fast food",
-            "timings": "10:00 am to 11:00 pm",
-            "cost": "Rs. 1000",
-            "rating": "4.5",
-            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
-        },
-        {
-            "id": 4,
-            "name": "Pizza Hut",
-            "location": "koramangala",
-            "cuisines": "fast food",
-            "timings": "10:00 am to 11:00 pm",
-            "cost": "Rs. 1000",
-            "rating": "4.5",
-            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
-        },
-        {
-            "id": 5,
-            "name": "Dominos",
-            "location": "koramangala",
-            "cuisines": "fast food",
-            "timings": "10:00 am to 11:00 pm",
-            "cost": "Rs. 1000",
-            "rating": "4.5",
-            "image": "https://b.zmtcdn.com/data/pictures/chains"
-        }
+    {
+      "id": 1,
+      "name": "KFC",
+      "location": "koramangala",
+      "cuisines": "fast food",
+      "timings": "10:00 am to 11:00 pm",
+      "rating": "4.5",
+      "image": "https://upload.wikimedia.org/wikipedia/en/b/bf/KFC_logo.svg"
+    },
+    {
+      "id": 2,
+      "name": "McDonalds",
+      "location": "koramangala",
+      "cuisines": "fast food",
+      "timings": "10:00 am to 11:00 pm",
+      "rating": "4.5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
+    },
+    {
+      "id": 3,
+      "name": "Burger King",
+      "location": "koramangala",
+      "cuisines": "fast food",
+      "timings": "10:00 am to 11:00 pm",
+      "rating": "4.5",
+      "image": "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png"
+    },
+    {
+      "id": 4,
+      "name": "Pizza Hut",
+      "location": "koramangala",
+      "cuisines": "fast food",
+      "timings": "10:00 am to 11:00 pm",
+      "rating": "4.5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Pizza_Hut_1967-1999_logo.svg/1200px-Pizza_Hut_1967-1999_logo.svg.png"
+    },
+    {
+      "id": 5,
+      "name": "Dominos",
+      "location": "koramangala",
+      "cuisines": "fast food",
+      "timings": "10:00 am to 11:00 pm",
+      "rating": "4.5",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/1200px-Domino%27s_pizza_logo.svg.png"
+    },
+    {
+      "name": "test",
+      "location": "test",
+      "image": "test",
+      "timings": "test",
+      "rating": "test",
+      "id": 6
+    }
   ]
 }
