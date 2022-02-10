@@ -1,0 +1,104 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "fdjk",
+      "email": "jkhkj",
+      "password": "jkk"
+    },
+    {
+      "name": "kiran",
+      "email": "kiran@gmail.com",
+      "password": "kiran",
+      "id": 2
+    },
+    {
+      "name": "kalu",
+      "email": "kalu@gmail.com",
+      "password": "kalu",
+      "id": 3
+    },
+    {
+      "name": "ramesh",
+      "email": "ram",
+      "password": "",
+      "id": 4
+    },
+    {
+      "name": "ramesh",
+      "email": "ramesh@gmail.com",
+      "password": "ramesh",
+      "id": 5
+    },
+    {
+      "name": "karan",
+      "email": "karan@gmail.com",
+      "password": "karan",
+      "id": 6
+    },
+    {
+      "name": "jeevan",
+      "email": "jeevan@gmail.com",
+      "password": "jeevan",
+      "id": 7
+    },
+    {
+      "name": "ganesh",
+      "email": "ganesh@gmail.com",
+      "password": "ganesh",
+      "id": 8
+    }
+  ],
+  "restaurants": [
+        { 
+            "id": 1,
+            "name": "KFC",
+            "location": "koramangala",
+            "cuisines": "fast food",
+            "timings": "10:00 am to 11:00 pm",
+            "cost": "Rs. 1000",
+            "rating": "4.5",
+            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
+        },
+        {
+            "id": 2,
+            "name": "McDonalds",
+            "location": "koramangala",
+            "cuisines": "fast food",
+            "timings": "10:00 am to 11:00 pm",
+            "cost": "Rs. 1000",
+            "rating": "4.5",
+            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Burger King",
+            "location": "koramangala",
+            "cuisines": "fast food",
+            "timings": "10:00 am to 11:00 pm",
+            "cost": "Rs. 1000",
+            "rating": "4.5",
+            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Pizza Hut",
+            "location": "koramangala",
+            "cuisines": "fast food",
+            "timings": "10:00 am to 11:00 pm",
+            "cost": "Rs. 1000",
+            "rating": "4.5",
+            "image": "https://b.zmtcdn.com/data/pictures/chains/2/308022/dabd30bd0b000ea859ada9a08a0132fc.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Dominos",
+            "location": "koramangala",
+            "cuisines": "fast food",
+            "timings": "10:00 am to 11:00 pm",
+            "cost": "Rs. 1000",
+            "rating": "4.5",
+            "image": "https://b.zmtcdn.com/data/pictures/chains"
+        }
+  ]
+}
