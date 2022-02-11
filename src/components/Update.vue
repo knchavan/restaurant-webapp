@@ -2,14 +2,14 @@
       <div>
             <Header />
             <div class="add">
-              <h1>Add New Restaurant</h1>
+              <h1>Update Restaurant</h1>
               <div class="add-controls">
                 <input type="text" v-model="rest.name" placeholder="Enter Name" />
                 <input type="text" v-model="rest.location" placeholder="Enter Location" />
                 <input type="text" v-model="rest.image" placeholder="Enter Image" />
                 <input type="text" v-model="rest.timings" placeholder="Enter Timings" />
                 <input type="text" v-model="rest.rating" placeholder="Enter Rating" />
-                <button @click="addRestaurant">Add Restaurant</button>
+                <button @click="updateRestaurant">Update Restaurant</button>
               </div>
             </div>
       </div>
@@ -23,32 +23,36 @@ export default {
   data() {
     return {
       rest: {
-        name: '',
-        location: '',
-        image: '',
-        timings: '',
-        rating: '',
       }
     }
   },
   components: {
     Header
   },
-  mounted() {
-
-  },
   methods: {
-    addRestaurant() {
-        this.$http.post('http://localhost:3000/restaurants', this.rest)
+    updateRestaurant() {
+        const restId = this.$route.params.id;
+        this.$http.put(`http://localhost:3000/restaurants/${restId}`, this.rest)
             .then((response) => {
                 console.log(response.data);
-                this.$router.push({name: 'home'});
+                this.$router.push({name: 'edit'});
             }).catch((error) => {
                 console.log(error);
             })
         console.log(this.rest);
         console.log("done");
     }
+  },
+  async mounted() {
+    const restId = this.$route.params.id;
+    await this.$http.get(`http://localhost:3000/restaurants/${restId}`)
+      .then(response => {
+        console.log("This is result "+response.data);
+        this.rest = response.data;
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }
 </script>

@@ -16,6 +16,13 @@
             </p>
             <p> {{ rest.timings }} </p>
         </div>
+        <hr v-if="edit">
+        <div v-if="edit" class="card-edit">
+            <router-link class="edit-button" :to="`/update/${rest.id}`">
+                Edit
+            </router-link>
+            <button class="delete-button" @click="deleteRestaurant(rest.id)">Delete</button>
+        </div>
     </div>
 </template>
 
@@ -27,8 +34,25 @@ export default {
     rest: {
         type: Object,
         required: true
+    },
+    edit: {
+        type: Boolean,
+        required: false,
+        default: false
     }
   },
+  methods: {
+      deleteRestaurant(restId) {
+          this.$http.delete(`http://localhost:3000/restaurants/${restId}`)
+            .then(() => {
+                alert("Restaurant deleted Successfully")
+                this.$router.push({name: 'home'})
+            })
+            .catch(err => {
+                console.error(err)
+            })
+      }
+  }
 }
 </script>
 
@@ -60,5 +84,33 @@ span {
     background-color: #eee000;
     padding: 5px;
     border-radius: 5px;
+}
+.card-edit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.edit-button {
+    text-align: center;
+    background: limegreen;
+    color: #fff;
+    padding: 5px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.delete-button {
+    text-align: center;
+    background: indianred;
+    color: #fff;
+    padding: 5px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: none;
+    border-left: 1px solid;
 }
 </style>

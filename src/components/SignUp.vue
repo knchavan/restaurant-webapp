@@ -21,7 +21,7 @@
       <div>
         <button v-on:click="SignUp">SignUp</button>
       </div>
-      <div>
+      <div class="login-link">
         <router-link to="/login">Already have a account? Login Here</router-link>
       </div>
     </div>
@@ -73,6 +73,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+h1 {
+  text-align: center;
+}
 .signup {
   margin: 0 auto;
   width: 300px;
@@ -82,6 +85,7 @@ export default {
   width: 300px;
   height: 40px;
   border: 1px solid #ccc;
+  margin: 10px auto;
 }
 
 .signup button {
@@ -93,5 +97,8 @@ export default {
 }
 .input-controls {
   margin: 0 auto;
+}
+.login-link {
+  margin-top: 20px;
 }
 </style>

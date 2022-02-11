@@ -69,15 +69,6 @@
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/1200px-McDonald%27s_Golden_Arches.svg.png"
     },
     {
-      "id": 3,
-      "name": "Burger King",
-      "location": "koramangala",
-      "cuisines": "fast food",
-      "timings": "10:00 am to 11:00 pm",
-      "rating": "4.5",
-      "image": "http://assets.stickpng.com/images/5842996fa6515b1e0ad75add.png"
-    },
-    {
       "id": 4,
       "name": "Pizza Hut",
       "location": "koramangala",
@@ -92,11 +83,11 @@
       "location": "koramangala",
       "cuisines": "fast food",
       "timings": "10:00 am to 11:00 pm",
-      "rating": "4.5",
+      "rating": "5",
       "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Domino%27s_pizza_logo.svg/1200px-Domino%27s_pizza_logo.svg.png"
     },
     {
-      "name": "test",
+      "name": " new test",
       "location": "test",
       "image": "test",
       "timings": "test",

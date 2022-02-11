@@ -4,6 +4,8 @@ import Home from './components/Home.vue'
 import SignUp from './components/SignUp.vue'
 import Login from './components/Login.vue'
 import Add from './components/Add.vue'
+import Edit from './components/Edit.vue'
+import Update from './components/Update.vue'
 
 const routes = [
     {
@@ -25,6 +27,16 @@ const routes = [
         name: 'add',
         path: '/add',
         component: Add
+    },
+    {
+        name: 'edit',
+        path: '/edit',
+        component: Edit
+    },
+    {
+        name: 'update',
+        path: '/update/:id',
+        component: Update
     }
 ];
 
