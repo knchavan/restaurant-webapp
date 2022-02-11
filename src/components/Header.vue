@@ -22,6 +22,7 @@ export default {
   methods: {
       Logout() {
         localStorage.removeItem('restaurantUser');
+        localStorage.clear();
         this.$router.push({name: 'login'});
       }
   },

@@ -26,10 +26,6 @@ export default {
     Header, Card
   },
   mounted() {
-    const user = localStorage.getItem('restaurantUser');
-    if (!user) {
-      this.$router.push({name: 'login'});
-    }
 
     // Get list of all Restaurants
     this.$http.get('http://localhost:3000/restaurants')
@@ -37,7 +33,8 @@ export default {
             console.log(response.data);
             this.restaurants = response.data;
         })
-  }
+  },
+
 }
 </script>
 

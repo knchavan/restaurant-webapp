@@ -55,8 +55,8 @@
       "name": "KFC",
       "location": "koramangala",
       "cuisines": "fast food",
-      "timings": "10:00 am to 11:00 pm",
-      "rating": "4.5",
+      "timings": "10:00 am to 12:00 pm",
+      "rating": "5",
       "image": "https://upload.wikimedia.org/wikipedia/en/b/bf/KFC_logo.svg"
     },
     {
@@ -88,11 +88,19 @@
     },
     {
       "name": " new test",
-      "location": "test",
-      "image": "test",
-      "timings": "test",
-      "rating": "test",
+      "location": "Mumbai",
+      "image": "",
+      "timings": "10:00 am to 06:00 pm",
+      "rating": "3.5",
       "id": 6
+    },
+    {
+      "name": "test2",
+      "location": "Pune",
+      "image": "",
+      "timings": "11:00 am to 5:00 pm",
+      "rating": "4",
+      "id": 7
     }
   ]
 }
