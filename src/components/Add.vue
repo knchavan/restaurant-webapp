@@ -8,7 +8,7 @@
                 <input type="text" v-model="rest.location" placeholder="Enter Location" />
                 <input type="text" v-model="rest.image" placeholder="Enter Image" />
                 <input type="text" v-model="rest.timings" placeholder="Enter Timings" />
-                <input type="text" v-model="rest.rating" placeholder="Enter Rating" />
+                <input type="number" v-model="rest.rating" placeholder="Enter Rating" />
                 <button @click="addRestaurant">Add Restaurant</button>
               </div>
             </div>
@@ -27,8 +27,8 @@ export default {
         location: '',
         image: '',
         timings: '',
-        rating: '',
-      }
+        rating: 0,
+      },
     }
   },
   components: {
@@ -39,15 +39,15 @@ export default {
   },
   methods: {
     addRestaurant() {
-        this.$http.post('http://localhost:3000/restaurants', this.rest)
+      this.rest.rating = parseFloat(this.rest.rating);
+
+        this.$http.post('https://localhost:5001/api/restaurant', this.rest)
             .then((response) => {
                 console.log(response.data);
                 this.$router.push({name: 'home'});
             }).catch((error) => {
                 console.log(error);
             })
-        console.log(this.rest);
-        console.log("done");
     }
   }
 }

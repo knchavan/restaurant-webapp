@@ -43,7 +43,7 @@ export default {
   },
   methods: {
       deleteRestaurant(restId) {
-          this.$http.delete(`http://localhost:3000/restaurants/${restId}`)
+          this.$http.delete(`https://localhost:5001/api/restaurant/${restId}`)
             .then(() => {
                 alert("Restaurant deleted Successfully")
                 this.$router.push({name: 'home'})
@@ -99,6 +99,7 @@ span {
     justify-content: center;
     align-items: center;
     display: flex;
+    text-decoration: none;
 }
 .delete-button {
     text-align: center;
@@ -112,5 +113,6 @@ span {
     display: flex;
     border: none;
     border-left: 1px solid;
+    cursor: pointer;
 }
 </style>

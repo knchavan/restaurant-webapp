@@ -15,6 +15,7 @@
 <script>
 import Header from './Header.vue';
 import Card from './Card.vue'
+import axios from 'axios';
 export default {
   name: 'Home',
   data() {
@@ -32,7 +33,7 @@ export default {
     }
 
     // Get list of all Restaurants
-    this.$http.get('http://localhost:3000/restaurants')
+    axios.get('https://localhost:5001/api/restaurant')
         .then((response) => {
             console.log(response.data);
             this.restaurants = response.data;

@@ -33,7 +33,7 @@ export default {
     }
 
     // Get list of all Restaurants
-    this.$http.get('http://localhost:3000/restaurants')
+    this.$http.get('https://localhost:5001/api/restaurant')
         .then((response) => {
             console.log(response.data);
             this.restaurants = response.data;

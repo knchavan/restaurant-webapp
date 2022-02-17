@@ -8,7 +8,7 @@
                 <input type="text" v-model="rest.location" placeholder="Enter Location" />
                 <input type="text" v-model="rest.image" placeholder="Enter Image" />
                 <input type="text" v-model="rest.timings" placeholder="Enter Timings" />
-                <input type="text" v-model="rest.rating" placeholder="Enter Rating" />
+                <input type="number" v-model="rest.rating" placeholder="Enter Rating" />
                 <button @click="updateRestaurant">Update Restaurant</button>
               </div>
             </div>
@@ -17,7 +17,7 @@
 
 <script>
 import Header from './Header.vue';
-
+import axios from 'axios';
 export default {
   name: 'Add',
   data() {
@@ -31,8 +31,8 @@ export default {
   },
   methods: {
     updateRestaurant() {
-        const restId = this.$route.params.id;
-        this.$http.put(`http://localhost:3000/restaurants/${restId}`, this.rest)
+        // const restId = this.$route.params.id;
+        axios.put(`https://localhost:5001/api/restaurant`, this.rest)
             .then((response) => {
                 console.log(response.data);
                 this.$router.push({name: 'edit'});
@@ -45,7 +45,7 @@ export default {
   },
   async mounted() {
     const restId = this.$route.params.id;
-    await this.$http.get(`http://localhost:3000/restaurants/${restId}`)
+    await this.$http.get(`https://localhost:5001/api/restaurant/${restId}`)
       .then(response => {
         console.log("This is result "+response.data);
         this.rest = response.data;
@@ -93,5 +93,6 @@ button {
   border: none;
   background: #333;
   color: #fff;
+  cursor: pointer;
 }
 </style>

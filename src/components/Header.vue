@@ -1,8 +1,8 @@
 <template>
     <div class="nav">
-        <router-link to="/">Home</router-link>
-        <router-link to="/add">Add New Restaurant</router-link>
-        <router-link to="/edit">Edit Restaurants</router-link>
+        <router-link class="router-link" to="/">Home</router-link>
+        <router-link class="router-link" to="/add">Add New Restaurant</router-link>
+        <router-link class="router-link" to="/edit">Edit Restaurants</router-link>
         <div class="user">
             <span class="user-name">Hello {{ name }}!</span>
             <span href="" @click="Logout">Logout</span>
@@ -67,5 +67,8 @@ export default {
 }
 span {
     cursor: pointer;
+}
+.router-link {
+    text-decoration: none;
 }
 </style>

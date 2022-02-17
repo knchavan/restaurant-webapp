@@ -39,6 +39,7 @@ export default {
     async Login() {
       await axios.get(`http://localhost:3000/users?email=${this.user.email}&password=${this.user.password}`)
         .then(response => {
+            console.log(JSON.stringify(response.data[0]));
             localStorage.setItem('restaurantUser', JSON.stringify(response.data[0]));
             this.$router.push({name: 'home'});
         }).catch(error => {
