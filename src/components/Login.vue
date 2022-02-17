@@ -47,12 +47,6 @@ export default {
           alert("Login Failed");
         });
     }
-  },
-  mounted() {
-    const user = localStorage.getItem('restaurantUser');
-    if (user) {
-      this.$router.push({name: 'home'});
-    }
   }
 }
 </script>

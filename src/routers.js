@@ -14,35 +14,56 @@ const routes = [
         component: SignUp
     },
     {
-        name: 'home',
-        path: '/',
-        component: Home
-    },
-    {
         name: 'login',
         path: '/login',
         component: Login
     },
     {
+        name: 'home',
+        path: '/',
+        component: Home,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
         name: 'add',
         path: '/add',
-        component: Add
+        component: Add,
+        meta: {
+            requiresAuth: true
+        }
     },
     {
         name: 'edit',
         path: '/edit',
-        component: Edit
+        component: Edit,
+        meta: {
+            requiresAuth: true
+        }
     },
     {
         name: 'update',
         path: '/update/:id',
-        component: Update
+        component: Update,
+        meta: {
+            requiresAuth: true
+        }
     }
 ];
 
 const router = new VueRouter({
     routes,
     mode: 'history'
+})
+
+router.beforeEach((to, from, next) => {
+    const user = localStorage.getItem('restaurantUser');
+    const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+    if(requiresAuth && !user) 
+        next({ name: 'login'});
+    else next()
 })
 
 export default router;

@@ -61,12 +61,6 @@ export default {
           alert("SignUp Failed");
         });
     }
-  },
-  mounted() {
-    const user = localStorage.getItem('restaurantUser');
-    if (user) {
-      this.$router.push({name: 'home'});
-    }
   }
 }
 </script>
