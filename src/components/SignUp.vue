@@ -51,7 +51,7 @@ export default {
         alert("Passwords do not match");
         return;
       }
-      await axios.post('http://localhost:3000/users', this.user)
+      await axios.post('https://localhost:5001/api/user/signup', this.user)
         .then(response => {
           console.log(response);
           localStorage.setItem('restaurantUser', JSON.stringify(response.data));
