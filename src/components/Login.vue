@@ -2,6 +2,11 @@
   <div>
     <h1>{{ msg }}</h1>
     <div class="login">
+      <div class="error-span">
+        <ul v-for="error in errors" :key="error">
+          <li> {{ error }} </li>
+        </ul>
+      </div>
       <div>
         <label for="name">Email: </label>
         <input type="email" v-model="user.email">
@@ -31,14 +36,20 @@ export default {
         email: '',
         password: '',
       },
-      msg: 'Login here'
+      msg: 'Login here',
+      errors: [],
     }
   },
   
   methods: {
     async Login() {
-      // await axios.get(`http://localhost:3000/users?email=${this.user.email}&password=${this.user.password}`)
-      // await axios.get(`https://localhost:5001/api/user/login`, this.user)
+      this.errors = []
+      if (this.user.email == '' || this.user.password == '') {
+        let msg = "Fields should not be empty!";
+        this.errors.push(msg);
+        return;
+      }
+
       await axios.post(`https://localhost:5001/api/user/login`, {
         email: this.user.email,
         password: this.user.password
@@ -48,8 +59,11 @@ export default {
             localStorage.setItem('restaurantUser', JSON.stringify(response.data));
             this.$router.push({name: 'home'});
         }).catch(error => {
+          let msg = "Email or Password are Invalid";
+          this.errors.push(msg);
           console.log(error);
-          alert("Login Failed");
+          // console.log(error.response.status)
+          // alert("Login Failed");
         });
     }
   }
@@ -85,5 +99,10 @@ h1 {
 }
 .signup-link {
   margin-top: 20px;
+}
+
+.error-span {
+  color: red;
+  float: left;
 }
 </style>
