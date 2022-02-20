@@ -44,11 +44,23 @@ export default {
   methods: {
     async Login() {
       this.errors = []
-      if (this.user.email == '' || this.user.password == '') {
-        let msg = "Fields should not be empty!";
+      let flag = false;
+      if (this.user.email == '') {
+        let msg = "Email field should not be empty!";
         this.errors.push(msg);
-        return;
+        flag = true
       }
+      else if (!this.emailValidate()) {
+        let msg = "Email Id is Invalid!";
+        this.errors.push(msg);
+        flag = true
+      }
+      if (this.user.password == '') {
+        let msg = "Password field should not be empty!";
+        this.errors.push(msg);
+        flag = true
+      }
+      if (flag) return;
 
       await axios.post(`https://localhost:5001/api/user/login`, {
         email: this.user.email,
@@ -59,12 +71,16 @@ export default {
             localStorage.setItem('restaurantUser', JSON.stringify(response.data));
             this.$router.push({name: 'home'});
         }).catch(error => {
-          let msg = "Email or Password are Invalid";
+          let msg = "Email or Password is Invalid!";
           this.errors.push(msg);
           console.log(error);
           // console.log(error.response.status)
           // alert("Login Failed");
         });
+    },
+    emailValidate() {
+      let emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return emailRegex.test(this.user.email);
     }
   }
 }
