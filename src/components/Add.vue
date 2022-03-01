@@ -8,7 +8,7 @@
                 <input type="text" v-model="rest.location" placeholder="Enter Location" />
                 <input type="text" v-model="rest.image" placeholder="Enter Image" />
                 <input type="text" v-model="rest.timings" placeholder="Enter Timings" />
-                <input type="number" v-model="rest.rating" placeholder="Enter Rating" />
+                <input type="text" v-model="rest.rating" placeholder="Enter Rating" />
                 <button @click="addRestaurant">Add Restaurant</button>
               </div>
             </div>
@@ -27,7 +27,7 @@ export default {
         location: '',
         image: '',
         timings: '',
-        rating: 0,
+        rating: '',
       },
     }
   },

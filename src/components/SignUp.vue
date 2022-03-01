@@ -76,7 +76,7 @@ export default {
         this.errors.push(msg);
         flag = true
       }
-      if (this.password !== this.user.password || this.user.password === '') {
+      if (this.password !== this.user.passwordConfirm || this.user.password === '') {
         let msg = "Password and Confirm Password did not match!";
         this.errors.push(msg);
         flag = true
