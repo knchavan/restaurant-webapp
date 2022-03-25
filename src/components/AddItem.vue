@@ -2,7 +2,7 @@
       <div>
             <Header />
             <div class="add">
-              <h1>Add New Restaurant</h1>
+              <h1>Add New Item</h1>
               <div class="error-box">
                 <div class="error-span">
                 <ul v-for="error in errors" :key="error">
@@ -11,12 +11,15 @@
                 </div>
               </div>
               <div class="add-controls">
-                <input type="text" v-model="rest.name" placeholder="Enter Name" />
-                <input type="text" v-model="rest.location" placeholder="Enter Location" />
-                <input type="text" v-model="rest.image" placeholder="Enter Image" />
-                <input type="text" v-model="rest.timings" placeholder="Enter Timings" />
-                <input type="text" v-model="rest.rating" placeholder="Enter Rating" />
-                <button @click="addRestaurant">Add Restaurant</button>
+                <input type="text" v-model="item.name" placeholder="Enter Item Name" />
+                <input type="text" v-model="item.price" placeholder="Enter Item Price" />
+                <input type="text" v-model="item.image" placeholder="Enter Item Image" />
+                <input type="text" v-model="item.description" placeholder="Enter Item Description" />
+                <select name="" id="" v-model="item.restaurantId">
+                    <option value="" selected>-- Choose Restaurant --</option>
+                    <option v-for="(rest,key) in restaurants" :key="key" :value="rest.id"> {{ rest.name }} </option>
+                </select>
+                <button @click="addRestaurant">Create Item</button>
               </div>
             </div>
       </div>
@@ -24,6 +27,7 @@
 
 <script>
 import Header from './Header.vue';
+import axios from 'axios';
 
 export default {
   name: 'Add',
@@ -37,49 +41,63 @@ export default {
         rating: '',
       },
       errors: [],
+      restaurants: [],
+      item: {
+          name: '',
+          price: '',
+          image: '',
+          description: '',
+          restaurantId: '',
+      }
     }
   },
   components: {
     Header
   },
   mounted() {
-
+      // Get list of all Restaurants
+    axios.get('https://localhost:5001/api/restaurant')
+        .then((response) => {
+            console.log(response.data);
+            this.restaurants = response.data;
+        })
+        console.log( "This is rest" + this.restaurants);
   },
   methods: {
     addRestaurant() {
-      
+
       this.errors = []
       let flag = false;
-      if (this.rest.name == '') {
+      if (this.item.name == '') {
         let msg = "Name field should not be empty!";
         this.errors.push(msg);
         flag = true
       }
-      if (this.rest.location == '') {
-        let msg = "Location field should not be empty!";
+      if (this.item.price == '') {
+        let msg = "Price field should not be empty!";
         this.errors.push(msg);
         flag = true
       }
-      if (this.rest.image == '') {
+      if (this.item.image == '') {
         let msg = "Image field should not be empty!";
         this.errors.push(msg);
         flag = true
       }
-      if (this.rest.timings == '') {
-        let msg = "Timings field should not be empty!";
+      if (this.item.description == '') {
+        let msg = "Description field should not be empty!";
         this.errors.push(msg);
         flag = true
       }
-      if (this.rest.rating == '') {
-        let msg = "Rating field should not be empty!";
+      if (this.item.restaurantId == '') {
+        let msg = "Please, Choose the restaurant Id!";
         this.errors.push(msg);
         flag = true
       }
 
       if (flag) return;
-      this.rest.rating = parseFloat(this.rest.rating);
+      this.item.price = parseFloat(this.item.price);
 
-        this.$http.post('https://localhost:5001/api/restaurant', this.rest)
+        this.$http.post('https://localhost:5001/api/item', this.item)
             .then((response) => {
                 console.log(response.data);
                 this.$router.push({name: 'home'});
@@ -109,7 +127,7 @@ h1 {
   justify-content: center;
   align-items: center;
 }
-input {
+input, select {
   width: 70%;
   height: 30px;
   margin: 10px auto;
