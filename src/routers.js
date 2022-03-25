@@ -6,6 +6,8 @@ import Login from './components/Login.vue'
 import Add from './components/Add.vue'
 import Edit from './components/Edit.vue'
 import Update from './components/Update.vue'
+import Restaurants from './components/Restaurants.vue'
+import AddItem from './components/AddItem.vue'
 
 const routes = [
     {
@@ -22,6 +24,14 @@ const routes = [
         name: 'home',
         path: '/',
         component: Home,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        name: 'restaurants',
+        path: '/restaurants',
+        component: Restaurants,
         meta: {
             requiresAuth: true
         }
@@ -46,6 +56,14 @@ const routes = [
         name: 'update',
         path: '/update/:id',
         component: Update,
+        meta: {
+            requiresAuth: true
+        }
+    },
+    {
+        name: "addItem",
+        path: "/add-item",
+        component: AddItem,
         meta: {
             requiresAuth: true
         }
